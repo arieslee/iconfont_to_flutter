@@ -10,7 +10,7 @@ __pycache__/
 .Python
 build/
 develop-eggs/
-dist/
+.idea/
 downloads/
 eggs/
 .eggs/
@@ -102,3 +102,4 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.DS_Store
