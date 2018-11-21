@@ -84,7 +84,9 @@ class %s{
                 name, value = res[0]
                 name = name.replace('-', '_')
                 icon_name = name.lower()
-                string += f'    static const IconData {icon_name} = const IconData(0x{value}, fontFamily: __FONT_NAME__);\n'
+                find_string = f'IconData {icon_name} = const'
+                if find_string not in string:
+                    string += f'    static const IconData {icon_name} = const IconData(0x{value}, fontFamily: __FONT_NAME__);\n'
 
     flutter_code = flutter_code.replace('{FLUTTER_CODE}', string)
     flutter_file = os.path.join(os.path.dirname(__file__), 'dist/'+dist_name+'.dart')
