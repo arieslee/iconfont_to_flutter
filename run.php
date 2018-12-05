@@ -70,7 +70,7 @@ eot;
         $iconName = strtolower($name);
         $findString = 'static const IconData '.$iconName.' =';
         if(strpos($string, $findString) === false){
-            $string .= '    static const IconData '.$iconName.' = const IconData(0x'.trim($value).', fontFamily: __FONT_NAME__);'.PHP_EOL;
+            $string .= '    static const IconData '.$iconName.' = const IconData(0x'.trim($match[2][$key]).', fontFamily: __FONT_NAME__);'.PHP_EOL;
         }
     }
     $iconfontCode = str_replace('{FLUTTER_CODE}', $string, $iconfontCode);
